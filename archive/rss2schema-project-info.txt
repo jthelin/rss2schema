@@ -1,0 +1,43 @@
+# Rss2Schema
+
+https://rss2schema.codeplex.com/
+
+# Project Description
+
+ XML Schema for RSS 2.0 feed files.
+
+ An XML Schema for the RSS 2.0 specification at http://cyber.law.harvard.edu/rss/rss.html
+
+ RSS 2.0 specification: http://cyber.law.harvard.edu/rss/rss.html
+
+ This project is based on the work originally done by Jorgen Thelin in 2003 -  http://www.thearchitect.co.uk/weblog/archives/2003/03/000118.html
+
+
+Last edited Oct 10, 2008 at 6:00 PM by jthelin, version 6
+
+
+# Releases
+
+current   = rss2schema-2.0.2.16  
+date      = Sat Nov 1, 2008 
+status    = Stable 
+downloads = 4,626 
+
+https://rss2schema.codeplex.com/releases/view/18981
+
+## Release Notes
+
+Maintenance release.
+
+Issue # 11518 - Added the missing rating element from the spec to RssChannel.
+
+## Reviews for this release
+
+Nice work, Really valuable work
+ by mahdiit on Nov 17, 2011 at 10:07 PM
+
+Great Work.... People like you make internet more democratic than planet earth.
+ by guir on Dec 18, 2008 at 4:10 AM 
+
+Thanks a lot for your fine contribution. Works as specified.
+ by pdonner on Nov 14, 2008 at 10:12 PM 
