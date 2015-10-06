@@ -6,18 +6,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rss2sample", "rss2sample\rss2sample.csproj", "{62A80DCE-1202-4908-BEB3-4F56ADC961AC}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs03.codeplex.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = schema\\rss2schema.csproj
-		SccProjectName1 = schema
-		SccLocalPath1 = schema
-		SccProjectUniqueName2 = rss2sample\\rss2sample.csproj
-		SccProjectName2 = rss2sample
-		SccLocalPath2 = rss2sample
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
