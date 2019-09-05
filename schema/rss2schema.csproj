@@ -6,14 +6,15 @@
         <RootNamespace>rss2.schema</RootNamespace>
         <AssemblyName>rss2schema</AssemblyName>
         <AssemblyVersion>2.0</AssemblyVersion>
-        <FileVersion>2.0.2.17</FileVersion>
-        <PackageVersion>2.0.2.17</PackageVersion>
+        <FileVersion>2.0.2.18</FileVersion>
+        <PackageVersion>2.0.2.18</PackageVersion>
         <Title>RSS 2.0 Schema Library</Title>
         <Description>Rss2schema - XML Schema for RSS 2.0 feed files. An XML Schema for the RSS 2.0 specification at http://cyber.law.harvard.edu/rss/rss.html</Description>
         <Authors>Jorgen Thelin</Authors>
         <Copyright>Copyright (c) Jorgen Thelin 2003-2019</Copyright>
         <PackageProjectUrl>https://github.com/jthelin/rss2schema</PackageProjectUrl>
         <RepositoryUrl>https://github.com/jthelin/rss2schema</RepositoryUrl>
+        <PackageLicenseUrl>https://github.com/jthelin/rss2schema/blob/master/LICENSE.txt</PackageLicenseUrl>
     </PropertyGroup>
 
     <ItemGroup>
@@ -26,6 +27,9 @@
       <None Update="rss-2_0.xsd">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
       <None Include="xsdcodegen.cmd" />
     </ItemGroup>
 

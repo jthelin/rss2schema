@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) 2003-2019 Jorgen Thelin
+// Licensed under the MIT License.
+
+using System;
 using System.Xml.Serialization;
 using System.Globalization;
 
