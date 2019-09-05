@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     XML Schema for RSS v2.0
-    Copyright (C) 2003-2008  Jorgen Thelin
+    Copyright (C) 2003-2019  Jorgen Thelin
 
 Microsoft Public License (Ms-PL)
 
@@ -12,42 +12,33 @@ If you do not accept the license, do not use the software.
 1. Definitions
 
 The terms "reproduce," "reproduction," "derivative works," and "distribution" have the same meaning here as under U.S. copyright law.
-
     A "contribution" is the original software, or any additions or changes to the software.
-
     A "contributor" is any person that distributes its contribution under this license.
-
     "Licensed patents" are a contributor's patent claims that read directly on its contribution.
 
 2. Grant of Rights
 
     (A) Copyright Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free copyright license to reproduce its contribution, prepare derivative works of its contribution, and distribute its contribution or any derivative works that you create.
-
     (B) Patent Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free license under its licensed patents to make, have made, use, sell, offer for sale, import, and/or otherwise dispose of its contribution in the software or derivative works of the contribution in the software.
 
 3. Conditions and Limitations
 
-    (A) No Trademark License- This license does not grant you rights to use any contributors' name, logo, or trademarks.
-
+    (A) No Trademark License - This license does not grant you rights to use any contributors' name, logo, or trademarks.
     (B) If you bring a patent claim against any contributor over patents that you claim are infringed by the software, your patent license from such contributor to the software ends automatically.
-
     (C) If you distribute any portion of the software, you must retain all copyright, patent, trademark, and attribution notices that are present in the software.
-
     (D) If you distribute any portion of the software in source code form, you may do so only under this license by including a complete copy of this license with your distribution. If you distribute any portion of the software in compiled or object code form, you may only do so under a license that complies with this license.
-
     (E) The software is licensed "as-is." You bear the risk of using it. The contributors give no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the contributors exclude the implied warranties of merchantability, fitness for a particular purpose and non-infringement. 
-
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
            elementFormDefault="unqualified" 
-           version="2.0.2.16">
+           version="2.0.2.17">
   <xs:annotation>
     <xs:documentation>XML Schema for RSS v2.0 feed files.</xs:documentation>
     <xs:documentation>Project home: http://www.codeplex.com/rss2schema/ </xs:documentation>
     <xs:documentation>Based on the RSS 2.0 specification document at http://cyber.law.harvard.edu/rss/rss.html </xs:documentation>
     <xs:documentation>Author: Jorgen Thelin</xs:documentation>
-    <xs:documentation>Revision: 16</xs:documentation>
-    <xs:documentation>Date: 01-Nov-2008</xs:documentation>
+    <xs:documentation>Revision: 17</xs:documentation>
+    <xs:documentation>Date: 04-Sep-2019</xs:documentation>
     <xs:documentation>Feedback to: http://www.codeplex.com/rss2schema/WorkItem/List.aspx </xs:documentation>
   </xs:annotation>
   <xs:element name="rss">
@@ -442,7 +433,7 @@ TODO:
 - Need to add some form of constraint to check on an item that one, or other, or both of title and description are present.
   However, I'm not sure it is possible to represent these constraints in XML Schema language alone.
 - Need some way to enforce cardinality constraints preventing repeated elements in channels or items
-- Unfortunately the bug-fix for issue 10231 made this schema non-deterministic with respect to extensibitity elements.
+- Unfortunately the bug-fix for issue 10231 made this schema non-deterministic with respect to extensibility elements.
   We can't tell whether an extension element in tRssChannel is within the choice or after the item elements.
   Need to reconsider the solution to bug-fix 10231.
 -->
@@ -452,7 +443,7 @@ Change Log:
 Date        Revision  Description
 31-Mar-2003   1       Initial version released for comment
 31-Mar-2003   2       Changes based on feedback from Gudge:
-                      - Remove targetNamespace="" and use elemenfFormDefault="unqualified" instead
+                      - Remove targetNamespace="" and use elementFormDefault="unqualified" instead
                       - Use namespace="##other" on <any>'s to create a more deterministic data model.
                       - Added missing xs:documentation inside xs:annotation at the schema level.
                       - Use xs:language for ISO Language Codes in <language> element.
@@ -463,13 +454,13 @@ Date        Revision  Description
                       - Use xs:all in place of xs:sequence to support flexible ordering of elements.
                         Although the ordering constraints for elements is not clear from the 
                         original specification, the custom and practice seems to be that 
-                        element ordering is freeform.
-                      - Use elemenfFormDefault="qualified" for explicit intent.
+                        element ordering is free-form.
+                      - Use elementFormDefault="qualified" for explicit intent.
 15-Apr-2003   4       Changes to solve some element ordering problems.
                       - Use xs:choice in place of xs:all as previous usage of <all> was invalid.
-                        This creates the problem that unsufficient constraints can be applied 
+                        This creates the problem that insufficient constraints can be applied 
                         by the schema - for example, it can't prevent two title elements for an item.
-                      - Use elemenfFormDefault="unqualified" for to get the correct behavious 
+                      - Use elementFormDefault="unqualified" for to get the correct behaviours 
                         when importing and combining schemas.
 15-Apr-2003   5       Putting the extensibility element inside the repeating choice solves 
                         all problems with element ordering.
@@ -482,7 +473,7 @@ Date        Revision  Description
                         as xs:string due to the problems with using 
                         a pattern with xs:dateTime described at
                         http://www.thearchitect.co.uk/weblog/archives/2003/04/000142.html
-19-Jun-2003   8       - Fixed a bug the Oxygen XML Editor spotted in the regexp for RFC-822 dates
+19-Jun-2003   8       - Fixed a bug that the Oxygen XML Editor spotted in the regexp for RFC-822 dates
 23-Jun-2003   9       - Added legal boilerplate license text for LGPL.
                       - Minor formatting changes.
 24-Jun-2003  10       - Missing types for item/title and item/description - Spotted by Andreas Schwotzer.
@@ -490,11 +481,12 @@ Date        Revision  Description
 25-May-2008  12       - Bug fix 10231 from Ken Gruven - channel can contain zero or more items.
 06-Sep-2008  13       - Fixed tab-space whitespace issues. Now always use spaces. 
                       - Undid the fix for bug-fix 10231 since it made the schema non-deterministic 
-                        with respect to extensibility eleemnts in tRssChannel - need to reconsider the fix.
+                        with respect to extensibility elements in tRssChannel - need to reconsider the fix.
 08-Sep-2008  14       - Removed 't' prefixes from type names to improve class names 
                         that get code-generated from the schema. 
-22-Sep-2008  15       - Move type def for rss element in-line for improved compativility with Java 1.6 tools.
+22-Sep-2008  15       - Move type def for rss element in-line for improved compatibility with Java 1.6 tools.
 01-Nov-2008  16       - Added the missing rating element from the spec to RssChannel.
+04-Sep-2019  17       - Fixed some minor typos in comments and messages.
 -->
 
 </xs:schema>

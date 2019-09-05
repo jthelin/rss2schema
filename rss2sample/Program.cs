@@ -9,7 +9,7 @@ namespace rss2sample
     /// <summary>
     /// An example program showing how to use the code generated from the RSS 2.0 schema by xsd.exe
     /// </summary>
-    class Program
+    public class Program
     {
         static string weblogTitle = "TheArchitect.co.uk - Jorgen Thelin's weblog";
         static Uri weblogUri = new Uri("http://www.thearchitect.co.uk/weblog/");
@@ -28,25 +28,31 @@ namespace rss2sample
 
         static CultureInfo RssLocFormat = CultureInfo.GetCultureInfo("en-US");
 
-        static void Main()
+        public static void Main()
         {
             rss rss = new rss();
             RssChannel rssChannel = new RssChannel();
             rss.channel = rssChannel;
 
-            Image feedImage = new Image();
-            feedImage.link = weblogUri.AbsoluteUri;
-            feedImage.title = weblogTitle;
-            feedImage.width = weblogImageWidth.ToString(RssLocFormat);
-            feedImage.height = weblogImageHeight.ToString(RssLocFormat);
-            feedImage.url = weblogImageUri.AbsoluteUri;
+            Image feedImage = new Image
+            {
+                link = weblogUri.AbsoluteUri,
+                title = weblogTitle,
+                width = weblogImageWidth.ToString(RssLocFormat),
+                height = weblogImageHeight.ToString(RssLocFormat),
+                url = weblogImageUri.AbsoluteUri
+            };
 
-            Guid itemGuid = new Guid();
-            itemGuid.isPermaLink = false;
-            itemGuid.Value = itemIdTag.AbsoluteUri;
+            Guid itemGuid = new Guid
+            {
+                isPermaLink = false,
+                Value = itemIdTag.AbsoluteUri
+            };
 
-            Category itemCategory = new Category();
-            itemCategory.Value = itemCategoryName;
+            Category itemCategory = new Category
+            {
+                Value = itemCategoryName
+            };
 
             RssItem rssItem = new RssItem();
             rssItem.ItemsElementName = new ItemsChoiceType1[] {
@@ -85,7 +91,7 @@ namespace rss2sample
                 weblogRating
             };
             // Add the blog post item(s)
-            rssChannel.item = new RssItem[] { 
+            rssChannel.item = new [] { 
                 rssItem 
             };
 
