@@ -34,12 +34,12 @@ The terms "reproduce," "reproduction," "derivative works," and "distribution" ha
            version="2.0.2.17">
   <xs:annotation>
     <xs:documentation>XML Schema for RSS v2.0 feed files.</xs:documentation>
-    <xs:documentation>Project home: http://www.codeplex.com/rss2schema/ </xs:documentation>
+    <xs:documentation>Project home: https://github.com/jthelin/rss2schema </xs:documentation>
     <xs:documentation>Based on the RSS 2.0 specification document at http://cyber.law.harvard.edu/rss/rss.html </xs:documentation>
     <xs:documentation>Author: Jorgen Thelin</xs:documentation>
     <xs:documentation>Revision: 17</xs:documentation>
     <xs:documentation>Date: 04-Sep-2019</xs:documentation>
-    <xs:documentation>Feedback to: http://www.codeplex.com/rss2schema/WorkItem/List.aspx </xs:documentation>
+    <xs:documentation>Feedback to: https://github.com/jthelin/rss2schema/issues </xs:documentation>
   </xs:annotation>
   <xs:element name="rss">
     <xs:complexType>

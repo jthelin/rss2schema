@@ -2,7 +2,7 @@
 using System.Xml.Serialization;
 using System.Globalization;
 
-namespace rss2sample
+namespace rss2.sample
 {
     using rss2.schema;
 
@@ -26,15 +26,15 @@ namespace rss2sample
         static string itemCategoryName = "Games";
         static DateTime itemPubDate = new DateTime(2008, 9, 7, 20, 2, 1, DateTimeKind.Utc);
 
-        static CultureInfo RssLocFormat = CultureInfo.GetCultureInfo("en-US");
+        static readonly CultureInfo RssLocFormat = CultureInfo.GetCultureInfo("en-US");
 
         public static void Main()
         {
-            rss rss = new rss();
-            RssChannel rssChannel = new RssChannel();
+            var rss = new rss();
+            var rssChannel = new RssChannel();
             rss.channel = rssChannel;
 
-            Image feedImage = new Image
+            var feedImage = new Image
             {
                 link = weblogUri.AbsoluteUri,
                 title = weblogTitle,
@@ -43,39 +43,43 @@ namespace rss2sample
                 url = weblogImageUri.AbsoluteUri
             };
 
-            Guid itemGuid = new Guid
+            var itemGuid = new Guid
             {
                 isPermaLink = false,
                 Value = itemIdTag.AbsoluteUri
             };
 
-            Category itemCategory = new Category
+            var itemCategory = new Category
             {
                 Value = itemCategoryName
             };
 
-            RssItem rssItem = new RssItem();
-            rssItem.ItemsElementName = new ItemsChoiceType1[] {
-                // Ordering must correspond to the contents of rssItem.Items
-                ItemsChoiceType1.link,
-                ItemsChoiceType1.pubDate,
-                ItemsChoiceType1.guid,
-                ItemsChoiceType1.title,
-                ItemsChoiceType1.description,
-                ItemsChoiceType1.category
-            };
-            rssItem.Items = new object[] {
-                itemUri.AbsoluteUri,  // Must be a string value
-                itemPubDate.ToString(  // Format data value
-                    DateTimeFormatInfo.InvariantInfo.RFC1123Pattern,
-                    RssLocFormat ),  
-                itemGuid,
-                itemTitle,
-                itemBody,
-                itemCategory
+            var rssItem = new RssItem
+            {
+                ItemsElementName = new []
+                {
+                    // Ordering must correspond to the contents of rssItem.Items
+                    ItemsChoiceType1.link,
+                    ItemsChoiceType1.pubDate,
+                    ItemsChoiceType1.guid,
+                    ItemsChoiceType1.title,
+                    ItemsChoiceType1.description,
+                    ItemsChoiceType1.category
+                },
+                Items = new object[]
+                {
+                    itemUri.AbsoluteUri, // Must be a string value
+                    itemPubDate.ToString( // Format data value
+                        DateTimeFormatInfo.InvariantInfo.RFC1123Pattern,
+                        RssLocFormat),
+                    itemGuid,
+                    itemTitle,
+                    itemBody,
+                    itemCategory
+                }
             };
 
-            rssChannel.ItemsElementName = new ItemsChoiceType[] {
+            rssChannel.ItemsElementName = new [] {
                 // Ordering must correspond to the contents of rssChannel.Items
                 ItemsChoiceType.title,
                 ItemsChoiceType.link,
@@ -95,7 +99,7 @@ namespace rss2sample
                 rssItem 
             };
 
-            XmlSerializer serializer = new XmlSerializer(typeof(rss));
+            var serializer = new XmlSerializer(typeof(rss));
             serializer.Serialize(Console.Out, rss);
 
             Console.WriteLine();
